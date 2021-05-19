@@ -1,0 +1,64 @@
+<mat-grid-list cols="3">
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile>
+        
+        <table>
+            <thead>
+              <tr>
+                <th>Webshop - Register</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <mat-form-field appearance="outline">
+                    <mat-label>Username</mat-label>
+                    <input [formControl]="username" matInput placeholder="Username">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-hint></mat-hint>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td><mat-form-field appearance="fill">
+                    <mat-label>Enter your email</mat-label>
+                    <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                  </mat-form-field></td>
+              </tr>
+              <tr>
+                <td>
+                    <mat-form-field appearance="fill">
+                    <mat-label>Enter your password</mat-label>
+                    <input [formControl]="password"  matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field></td>
+              </tr>
+              <tr>
+                <td align="center"><a routerLink="/login">Already have an account? Login here!</a></td>
+              </tr>
+              <tr>
+                  <td align="center"><button (click)="registerButton()" mat-raised-button color="primary">Register</button></td>
+              </tr>
+            </tbody>
+            </table>
+
+
+        <p>
+
+
+
+        
+    
+     <br>
+    
+        
+
+          
+    </p>
+    </mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+  </mat-grid-list>
+

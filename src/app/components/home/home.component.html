@@ -1,0 +1,68 @@
+<mat-drawer-container class="example-container" autosize>
+<mat-toolbar style="background-color: aqua;">
+    <button (click)="drawer.toggle()" mat-icon-button class="example-icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Webshop</span>
+    <span class="spacer"></span>
+    <button (click)="logout()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+  </mat-toolbar>
+
+
+    <mat-drawer style="background-color: cornflowerblue;" #drawer class="example-sidenav" mode="side">
+      <button style="width: 100px;" mat-button >List</button><br>
+      <button style="width: 100px;" mat-button (click)="newItemButton()" >New Item</button>
+
+    </mat-drawer>
+  
+<div style="background-color: antiquewhite; height: 100%;">
+
+    <mat-grid-list cols="4" rowHeight="600px" gutterSize="10px" >
+        <mat-grid-tile *ngFor="let item of items">
+
+            <mat-card style="width: 300px; height: 420px;" class="example-card">
+                <mat-card-header>
+                  <mat-card-title>{{item.name}}</mat-card-title>
+                  <mat-card-subtitle>{{item.itype}}</mat-card-subtitle>
+                </mat-card-header>
+                <img width="200px" height="250px" mat-card-image src="{{item.image}}">
+                <mat-card-content>
+                  <p>
+                   Quantity left: {{item.quantity}}
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button (click)="BuyButton(item)" style="background-color: crimson;" mat-button>BUY</button>
+                  <button (click)="RefillButton(item)" style="background-color: green;" mat-button>REFILL</button>
+                  <button (click)="deleteItemButton(item._id)" style="background-color: red;" mat-button>DELETE</button>
+                </mat-card-actions>
+              </mat-card>
+
+        </mat-grid-tile>
+        
+        <mat-grid-tile (click)="newItemButton()">
+
+            <mat-card style="width: 300px; height: 420px;" class="example-card">
+                <mat-card-header>
+                  <mat-card-title>Add new item</mat-card-title>
+                  <mat-card-subtitle>New Item</mat-card-subtitle>
+                </mat-card-header>
+                <img width="200px" height="250px" mat-card-image src="https://lh3.googleusercontent.com/proxy/wNhk-_pcysO0o5-uo642Qvf_q3YRyTflBfjKEaX0Uy5Rp37eVk-2FDinBiSoHuME9-2BFGIzd_GyyQozFGcg0Ms07JkNPtI">
+                <mat-card-content>
+                  <p>
+                   Click here to add a new item!
+                  </p>
+                </mat-card-content>
+              </mat-card>
+
+        </mat-grid-tile>
+
+        
+      </mat-grid-list>
+
+    
+</div>
+
+  </mat-drawer-container>

@@ -1,0 +1,44 @@
+<h1 mat-dialog-title>Add new item</h1>
+<div mat-dialog-content>
+<form [formGroup]="newItemForm">
+    <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Item name</mat-label>
+          <input formControlName="name" matInput placeholder="PC">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>The name of the item</mat-hint>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Item type</mat-label>
+          <input formControlName="itype" matInput placeholder="Electronics">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>The type of the item</mat-hint>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Item quantity</mat-label>
+          <input formControlName="quantity" type="number" matInput placeholder="1">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>The quantity of the item. The default is 1.</mat-hint>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Item image</mat-label>
+          <input formControlName="image" matInput placeholder="4">
+          <mat-icon matSuffix>image</mat-icon>
+          <mat-hint>The image of the item</mat-hint>
+        </mat-form-field>
+      </p>
+    </form>
+</div>
+<div mat-dialog-actions>
+  <button style="background-color: red;"mat-button mat-dialog-close>Close</button>
+  <button style="background-color: green;" mat-button (click)="createNewItemButton()" >Add</button>
+</div>
